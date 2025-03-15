@@ -1,0 +1,37 @@
+package electricity.billing.system;
+
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Splash extends JFrame {
+    Splash()
+    {
+        ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("icon/Splash.jpg"));
+        Image image1 = icon.getImage().getScaledInstance(600, 400, Image.SCALE_DEFAULT);
+        ImageIcon icon2 = new ImageIcon(image1);
+        JLabel imageLabel = new JLabel(icon2);
+        add(imageLabel);
+
+     setSize(600, 400);
+     setLocation(400, 250);
+     setVisible(true);
+
+     try {
+         Thread.sleep(3000);
+         setVisible(false);
+
+         new Login();
+     }
+     catch(Exception e)
+     {
+         e.printStackTrace();
+     }
+
+    }
+    public static void main(String[] args)
+    {
+        new Splash();
+
+    }
+}
